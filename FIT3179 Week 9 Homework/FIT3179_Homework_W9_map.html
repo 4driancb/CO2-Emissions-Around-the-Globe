@@ -46,9 +46,17 @@
         "color": {
           "field": "Total",
           "type": "quantitative",
-          "title": "Total CO2 Emission",
+          "title": "Total CO2 Emission (kt)",
           "scale": {"scheme": "reds"}
-        }
+        },
+        "tooltip": [
+          {"field": "Country", "title": "Country:"},
+          {
+            "field": "Total",
+            "type": "quantitative",
+            "title": "Total CO2 Emmission (kt):"
+          }
+        ]
       }
     }
   ],
