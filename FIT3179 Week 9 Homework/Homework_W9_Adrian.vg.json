@@ -87,11 +87,13 @@
       "encode": {
         "update": {
           "opacity": {"value": 0.7},
-          "tooltip": {"signal": "datum"},
+          "tooltip": {
+            "signal": "{\"Country:\": isValid(datum[\"Country\"]) ? datum[\"Country\"] : \"\"+datum[\"Country\"], \"Total CO2 Emmission (kt):\": format(datum[\"Total\"], \"\")}"
+          },
           "fill": {"scale": "color", "field": "Total"},
           "ariaRoleDescription": {"value": "circle"},
           "description": {
-            "signal": "\"longitude: \" + (format(datum[\"longitude\"], \"\")) + \"; latitude: \" + (format(datum[\"latitude\"], \"\")) + \"; Total CO2 Emission: \" + (format(datum[\"Total\"], \"\")) + \"; Magnitude (CO2 per capita): \" + (format(datum[\"Per Capita\"], \"\"))"
+            "signal": "\"longitude: \" + (format(datum[\"longitude\"], \"\")) + \"; latitude: \" + (format(datum[\"latitude\"], \"\")) + \"; Total CO2 Emission (kt): \" + (format(datum[\"Total\"], \"\")) + \"; Magnitude (CO2 per capita): \" + (format(datum[\"Per Capita\"], \"\")) + \"; Country:: \" + (isValid(datum[\"Country\"]) ? datum[\"Country\"] : \"\"+datum[\"Country\"]) + \"; Total CO2 Emmission (kt):: \" + (format(datum[\"Total\"], \"\"))"
           },
           "x": {"field": "layer_2_x"},
           "y": {"field": "layer_2_y"},
@@ -120,7 +122,7 @@
   ],
   "legends": [
     {
-      "title": "Total CO2 Emission",
+      "title": "Total CO2 Emission (kt)",
       "fill": "color",
       "gradientLength": {"signal": "clamp(height, 64, 200)"},
       "encode": {"gradient": {"update": {"opacity": {"value": 0.7}}}}
