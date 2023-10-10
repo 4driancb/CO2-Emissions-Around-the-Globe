@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>CO2 Emissions Around The Globe</title>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
+
+  <div class="page">
+
+    <!-- pure grid group -->
+    <div class="pure-g" style="background-color: white;">
+      <div class="pure-u-1-2">
+        <h1 style = "color:black;font-size:90px;">CO2 Emissions <br> Around The Globe</h1>
+        <p>This visualisation shows different types of CO2 emissions in different countries.</p>
+      </div>
+      <div class="pure-u-1-2">
+        <div id="vis1" class="vis-container"></div>
+        
+      </div>
+    </div>
+    <hr align="center">
+    <div style="text-align: center;">
+      <h3> <i>space for links to different parts of the website</i></h3>
+      </div>
+    <hr align="center">
+      </head>
+
+      <body>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-4-5">
+        <h1 style = "color:white">Total CO2 Emission</h1>
+      </div>
+    </div>
+  
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g" style="background-color: white";>
+      <div class="pure-u-1-2">
+        <div class="description description-left">
+          <h2>Top 7 Highest CO2 Emitting Countries</h2>
+          <p>
+            The bar chart shows the average total CO2 emissions of different countries. 
+            The countries are sorted by their average total CO2 emissions in descending order. The top 7 countries with the highest average total CO2 emissions are:
+          China, India, Russia, Japan, Germany, Ukraine, and Canada.
+          <br>
+          These countries are all major emitters of CO2, due to a variety of factors, including their large populations, industrialized economies, and reliance on fossil fuels.
+          China is the world's largest emitter of CO2, accounting for over 27% of global emissions. This is due to its large population and rapid economic growth, which has led to a significant increase in energy consumption.
+          India is the world's second-largest emitter of CO2, accounting for over 6% of global emissions. India's emissions are expected to continue to grow in the coming years as its economy develops.
+          Russia is the world's fourth-largest emitter of CO2, accounting for over 4% of global emissions. Russia's emissions are primarily due to its large industrial sector and its reliance on fossil fuels for energy.</p>
+        </div>
+      </div>
+      <div class="pure-u-1-2">
+        <div id="vis2" class="vis-container"></div>
+      </div>
+
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g" style="background-color: white";>
+      <div class="pure-u-1-2">
+        <div id="vis3" class="vis-container"></div>
+      </div>
+      <div class="pure-u-1-2">
+        <div class="description description-right">
+          <h2>Emission Trends</h2>
+          <p>
+            The line chart shows the average total CO2 emissions of Canada, China, Germany, India, Japan, Russia, Ukraine, and the United Kingdom from 1970 to 2020. 
+            The x-axis of the chart shows the year, and the y-axis shows the average total CO2 emissions in metric tons per capita.
+            The line chart shows that the average total CO2 emissions of all of the countries in the chart have increased over time. Each country can be highlighted by clicking on the legends. 
+           </div>
+      </div>
+
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h1 style = "color:white">CO2 Emissions from Oil</h1>
+      </div>
+    </div>
+
+    <div class="pure-g" style="background-color: white";>
+      <div class="pure-u-1-1">
+        <h2>CO2 Emissions from Oil Heatmap</h2>
+        <div id="vis4" class="vis-container"></div>
+        <p>
+          The heatmap shows that there is a large variation in CO2 emissions per capita between countries. 
+          The highest emitters are Qatar, Saudi Arabia, and the United Arab Emirates, with emissions of over 30 metric tons per capita. 
+          The lowest emitters are countries in Africa, Asia, and South America, with emissions of less than 2 metric tons per capita.
+        </p>
+      </div>
+    </div>
+
+    <div class="pure-g" style="background-color: lightgray";>
+      <div class="pure-u-1-1 small-font">
+        <p>This visualisation is created by <b>Adrian Budiyuwono</b>. The datasource is <a href="https://www.kaggle.com/datasets/thedevastator/global-fossil-co2-emissions-by-country-2002-2022?select=GCB2022v27_MtCO2_flat.csv">taken from Kaggle.com</href>.</a></p>
+      </div>
+    </div>
+  
+  
+
+  </div> <!-- end page -->
+
+  <script type="text/javascript">
+    var specVis1 = "./mapviz.json";
+    var specVis2 = "./barchart.json";
+    var specVis3 = "./multiplelinechart.json"
+    var specVis4 = "./heatmap.json"
+
+    vegaEmbed('#vis1', specVis1, { "actions": false });
+
+    vegaEmbed('#vis2', specVis2, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis3', specVis3, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis4', specVis4, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  </script>
+</body>
+
+</html>
