@@ -11,6 +11,6 @@
     "encoding": {
       "y": {"field": "Continent", "type": "nominal"},
       "x": {"field": "Year", "type": "ordinal"},
-      "color": {"title":"Average CO2 Emission","aggregate": "mean", "field": "Oil", "type": "quantitative"}
+      "color": {"title":"Average CO2 Emission(kt)","aggregate": "mean", "field": "Oil", "type": "quantitative"}
   }
 }

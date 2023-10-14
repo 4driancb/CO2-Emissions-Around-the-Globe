@@ -40,7 +40,7 @@
         "color": {
           "field": "Country",
           "scale": {
-            "scheme": "tableau10"
+            "scheme": "dark2"
           }
         },
         "opacity": {

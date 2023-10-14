@@ -21,14 +21,16 @@
         "x": {
           "field": "Country",
           "type": "nominal",
-          "sort": "-y"
+          "sort": "-y",
+          "axis": {"labelAngle": 0}
         },
         "y": {
           "title": "Total CO2 Emissions (kt)",
           "field": "mean_co2",
           "type": "quantitative"
         },
-        "color": {"field": "mean_co2", "scale": {"range": ["#90EE90"]}}
+        "color": {"field": "mean_co2", "scale": {"range": ["#90EE90"]}},
+        "tooltip": {"field": "mean_co2", "type": "quantitative", "format":","}
       }
     },
     {
@@ -51,6 +53,7 @@
         "dx": -2,
         "dy": -2,
         "x": "width",
+        "y": 185,
         "text": "Mean CO2 Emission"
       }
     }
