@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>CO2 Emissions Around The Globe</title>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
+
+  <div class="page">
+
+    <!-- pure grid group -->
+    <div id="title" class="pure-g" style="background-color: white;">
+      <div class="pure-u-1-1" ;>
+        <div style="text-align: center;">
+          <h1 style="color:black;font-size:90px;">Effect of CO2 Emissions</h1>
+        </div>
+      </div>
+    </div>
+    <hr align="center">
+    <div style="text-align: center;">
+      <a class="pure-button" color="white" href="#CO2-Emissions">CO2 Emissions</a>
+
+
+      <a class="pure-button" href="#Effect-on-temperature">Effect on Global Temperature</a>
+
+
+      <a class="pure-button" href="#Effect-on-Humans">Effect on Humans</a>
+    </div>
+
+    <hr align="center">
+
+</head>
+
+<body>
+  <!-- end pure grid group -->
+
+  <!-- pure grid group -->
+  <div id="CO2-Emissions" class="pure-g">
+    <div class="pure-u-4-5">
+      <h1 style="color:white">CO2 Emissions</h1>
+    </div>
+  </div>
+
+  <div class="pure-g" style="background-color: white" ;>
+    <div class="pure-u-1-2">
+      <div class="description description-left">
+        <div style="text-align: justify;">
+          <h2>Total CO2 Emissions Around The World</h2>
+          <p> The map shows that the majority of CO2 emissions are concentrated in a few countries. China, the United
+            States, India, and Russia are the four largest CO2 emitters in the world, accounting for over half of global
+            CO2 emissions.
+
+            The map also shows that there is a large difference in CO2 emissions between developed and developing
+            countries. Developed countries generally have much higher CO2 emissions per capita than developing
+            countries.
+
+            The map can be used to analyze the distribution of CO2 emissions in a number of ways. For example, the map
+            can be used to identify the countries with the highest CO2 emissions, the countries with the lowest CO2
+            emissions, and the countries with the most significant changes in CO2 emissions over time.</p>
+        </div>
+      </div>
+    </div>
+    <div class="pure-u-1-2">
+      <div class="description description-right">
+        <div style="text-align: justify;">
+          <h2 style="color: white;"> Total CO2 Emissions Around The World</h2>
+          <p> The map shows that there is a need for global action to reduce CO2 emissions.
+            The countries with the highest CO2 emissions need to take steps to reduce their emissions,
+            and the countries with the lowest CO2 emissions need to support the transition to a low-carbon economy.
+
+            The map also shows that there is a need for equity in the global effort to reduce CO2 emissions. Developed
+            countries need to provide financial and technical assistance to developing countries to help them reduce
+            their emissions and adapt to the impacts of climate change.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  <div class="pure-g" style="background-color: white" ;>
+    <div class="pure-u-1-1">
+      <div id="vis1" class="vis-container"></div>
+
+    </div>
+  </div>
+  <!-- end pure grid group -->
+
+  <!-- pure grid group -->
+  <div class="pure-g" style="background-color: white" ;>
+    <div class="pure-u-1-2">
+      <div class="description description-left">
+        <div style="text-align: justify;">
+          <h2>Countries with highest CO2 emissions</h2>
+          <p>
+            The bar chart shows the average total CO2 emissions of different countries.
+            The countries are sorted by their average total CO2 emissions in descending order. The top 7 countries
+            with
+            the highest average total CO2 emissions are:
+            China, India, Russia, Japan, Germany, Ukraine, and Canada.
+            <br>
+            <br>
+            These countries are all major emitters of CO2, due to a variety of factors, including their large
+            populations, industrialized economies, and reliance on fossil fuels.
+            China is the world's largest emitter of CO2, accounting for over 27% of global emissions. This is due to
+            its
+            large population and rapid economic growth, which has led to a significant increase in energy
+            consumption.
+            India is the world's second-largest emitter of CO2, accounting for over 6% of global emissions. India's
+            emissions are expected to continue to grow in the coming years as its economy develops.
+            Russia is the world's fourth-largest emitter of CO2, accounting for over 4% of global emissions.
+            Russia's
+            emissions are primarily due to its large industrial sector and its reliance on fossil fuels for energy.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="pure-u-1-2">
+      <div id="vis2" class="vis-container"></div>
+    </div>
+
+  </div>
+  <!-- end pure grid group -->
+
+  <!-- pure grid group -->
+  <div class="pure-g" style="background-color: white" ;>
+    <div class="pure-u-1-2">
+      <div id="vis3" class="vis-container"></div>
+    </div>
+    <div class="pure-u-1-2">
+      <div class="description description-right">
+        <div style="text-align: justify;">
+          <h2>Emission Trends</h2>
+          <p>
+            The line chart shows the average total CO2 emissions of Canada, China, Germany, India, Japan, Russia,
+            Ukraine, and the United Kingdom from 1970 to 2020.
+            The x-axis of the chart shows the year, and the y-axis shows the average total CO2 emissions in metric
+            tons
+            per capita.
+            The line chart shows that the average total CO2 emissions of all of the countries in the chart have
+            increased over time. Each country can be highlighted by clicking on the legends.
+          <p>
+            Nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit amet. Eu tincidunt tortor aliquam nulla facilisi
+            cras fermentum. Metus aliquam eleifend mi in. Nec nam aliquam sem et tortor. Rhoncus urna neque viverra
+            justo nec. Ac auctor augue mauris augue neque gravida in. Vitae tortor condimentum lacinia quis. Volutpat
+            consequat mauris nunc congue nisi vitae. Semper eget duis at tellus. Nunc pulvinar sapien et ligula
+            ullamcorper malesuada. Purus gravida quis blandit turpis cursus in.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- end pure grid group -->
+
+  <!-- pure grid group -->
+  <div id="Effect-on-temperature" class="pure-g">
+    <div class="pure-u-1-1">
+      <h1 style="color:white">Effect on Global Temperature</h1>
+    </div>
+  </div>
+
+  <div class="pure-g" style="background-color: white" ;>
+    <div class="pure-u-1-2">
+      <div class="description description-left">
+        <div style="text-align: justify;">
+          <h2>Land-Ocean Temperature Model</h2>
+          <p>
+            The regression model between year and land-ocean temperature is a good fit to the data
+            and can be used to make informed estimates about future land-ocean temperature trends.
+            However, it is important to keep in mind the limitations of the model.
+            The model is based on data from the past and assumes that the relationship between year and
+            land-ocean temperature is linear. The model also does not take into account other factors that
+            may affect land-ocean temperature, such as human activity or natural variability.</p>
+          <p>
+            Nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit amet. Eu tincidunt tortor aliquam nulla facilisi
+            cras fermentum. Metus aliquam eleifend mi in. Nec nam aliquam sem et tortor. Rhoncus urna neque viverra
+            justo nec. Ac auctor augue mauris augue neque gravida in. Vitae tortor condimentum lacinia quis. Volutpat
+            consequat mauris nunc congue nisi vitae. Semper eget duis at tellus. Nunc pulvinar sapien et ligula
+            ullamcorper malesuada. Purus gravida quis blandit turpis cursus in.
+          </p>
+          <p>
+            Nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit amet. Eu tincidunt tortor aliquam nulla facilisi
+            cras fermentum. Metus aliquam eleifend mi in. Nec nam aliquam sem et tortor. Rhoncus urna neque viverra
+            justo nec. Ac auctor augue mauris augue neque gravida in. Vitae tortor condimentum lacinia quis. Volutpat
+            consequat mauris nunc congue nisi vitae.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="pure-u-1-2">
+      <div id="vis4" class="vis-container"></div>
+    </div>
+  </div>
+
+  <div class="pure-g" style="background-color: white" ;>
+    <div class="pure-u-1-2">
+      <div id="vis5" class="vis-container"></div>
+    </div>
+    <div class="pure-u-1-2">
+      <div class="description description-right">
+        <div style="text-align: justify;">
+          <p>
+          <h2>Sea Ice Extent</h2>
+
+          The area chart shows the average monthly sea ice extent in the Arctic from 1980 to 2023, divided into four
+          year
+          ranges: 1980-1989, 1990-1999, 2000-2009, and 2010-2023. The most recent year range is shown at the bottom of
+          the
+          chart in blue.
+
+          The chart shows a clear downward trend in sea ice extent over the past four decades. The average sea ice
+          extent in
+          the Arctic in September 2023 is 12.2% lower than the average sea ice extent in September 1980.
+
+          The chart also shows that the rate of decline in sea ice extent has accelerated in recent years. The average
+          sea
+          ice extent in September 2023 is 2.5% lower than the average sea ice extent in September 2010.
+
+          <br>
+          <br>
+
+          The decline in sea ice extent is a serious concern because it is contributing to climate change. Sea ice
+          reflects
+          sunlight back into space, helping to keep the Earth cool. As sea ice melts, more sunlight is absorbed by the
+          ocean
+          and the Earth warms.
+
+          This decline is also having a negative impact on Arctic ecosystems and communities. Sea ice is
+          essential for many Arctic animals, such as polar bears and seals. As sea ice melts, these animals are losing
+          their
+          habitat and food sources. Arctic communities are also being affected by the decline in sea ice, as they rely
+          on
+          sea ice for transportation and hunting.
+
+          Overall, the area chart shows a clear and concerning downward trend in Arctic sea ice extent over the past
+          four
+          decades. The rate of decline has accelerated in recent years, and the decline is having a negative impact on
+          climate change, Arctic ecosystems, and Arctic communities.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- pure grid group -->
+  <div id="Effect-on-Humans" class="pure-g">
+    <div class="pure-u-1-1">
+      <h1 style="color:white">Effect on Humans</h1>
+    </div>
+  </div>
+
+  <div class="pure-g" style="background-color: white" ;>
+    <div class="pure-u-1-2">
+      <div class="description description-left">
+        <div style="text-align: justify;">
+          <h2>Death by Risk Factors</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.
+          </p>
+          <p>
+            Dignissim sodales ut eu sem integer vitae justo. Sagittis vitae et leo duis ut diam quam. Tincidunt vitae
+            semper quis lectus nulla. Sed adipiscing diam donec adipiscing. Pulvinar sapien et ligula ullamcorper
+            malesuada proin. Pellentesque pulvinar pellentesque habitant morbi tristique senectus. Sapien pellentesque
+            habitant morbi tristique senectus et netus et malesuada. Nam libero justo laoreet sit amet cursus sit amet.
+            Malesuada fames ac turpis egestas maecenas pharetra convallis. Ultricies tristique nulla aliquet enim tortor
+            at auctor urna. Dictum varius duis at consectetur lorem.
+          </p>
+          <p>
+            Nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit amet. Eu tincidunt tortor aliquam nulla facilisi
+            cras fermentum. Metus aliquam eleifend mi in. Nec nam aliquam sem et tortor. Rhoncus urna neque viverra
+            justo nec. Ac auctor augue mauris augue neque gravida in. Vitae tortor condimentum lacinia quis. Volutpat
+            consequat mauris nunc congue nisi vitae. Semper eget duis at tellus. Nunc pulvinar sapien et ligula
+            ullamcorper malesuada. Purus gravida quis blandit turpis cursus in.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="pure-u-1-2">
+      <div id="vis6" class="vis-container"></div>
+    </div>
+  </div>
+
+  <div style="text-align: center;">
+    <a class="pure-button" href="#title">Back to top</a>
+  </div>
+
+  <hr color="white">
+
+  <div class="pure-g" style="background-color: #ebeaea" ;>
+    <div class="pure-u-1-1">
+      <p>This visualisation is created by <b>Adrian Budiyuwono</b>. All datasets used can be seen through this <a
+          href="https://docs.google.com/document/d/1ALsPO668uPf2DCrDyTtkm4TFlHL_x9aGsU2KXcAID3k/edit?usp=sharing">dataset
+          list</href>.</a></p>
+      <hr color="#ebeaea">
+      <hr color="#ebeaea">
+    </div>
+  </div>
+
+
+
+  </div> <!-- end page -->
+
+  <script type="text/javascript">
+    var specVis1 = "./mapviz.json";
+    var specVis2 = "./barchart.json";
+    var specVis3 = "./multiplelinechart.json";
+    var specVis4 = "./globaltempregression.json";
+    var specVis5 = "./seaiceextent.json";
+    var specVis6 = "./causeofdeath.json";
+
+    vegaEmbed('#vis1', specVis1, { "actions": false });
+
+    vegaEmbed('#vis2', specVis2, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis3', specVis3, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis4', specVis4, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis5', specVis5, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis6', specVis6, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  </script>
+</body>
+
+</html>
