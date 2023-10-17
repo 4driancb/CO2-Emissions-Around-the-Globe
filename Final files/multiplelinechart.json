@@ -1,0 +1,70 @@
+{
+  "config": {"view": {"stroke": null}},
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/4driancb/FIT3179/main/FIT3179%20Week%2010%20Homework/(veryrealCSVFIXED)CO2EmissionFiltered.csv"
+  },
+  "width": 350,
+  "height": 250,
+  "transform": [
+    {
+      "filter": "datum.Year >= 1950"
+    }
+  ],
+  "params": [
+    {
+      "name": "country_highlight",
+      "select": {
+        "type": "point",
+        "fields": [
+          "Country"
+        ]
+      },
+      "bind": "legend"
+    }
+  ],
+  "layer": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "title": "Year",
+          "timeUnit": "year",
+          "field": "Year",
+          "axis": {"grid": false}
+        },
+        "y": {
+          "title": "Average Total CO2 Emissions (kt)",
+          "aggregate": "average",
+          "field": "Total",
+          "axis": {"grid": false}
+        },
+        "color": {
+          "field": "Country",
+          "scale": {
+            "scheme": "dark2"
+          },
+          "legend": {"orient": "left", "offset": -180}
+        },
+        "opacity": {
+          "condition": {
+            "param": "country_highlight",
+            "value": 0.6
+          },
+          "value": 0.2
+        },
+        "tooltip": [
+          {
+            "field": "Country",
+            "type": "nominal"
+          },
+          {
+            "field": "Total",
+            "type": "quantitative",
+            "format": ","
+          }
+        ]
+      }
+    }
+  ]
+}

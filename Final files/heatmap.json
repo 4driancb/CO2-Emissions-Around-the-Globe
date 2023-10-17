@@ -1,0 +1,15 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {"url": "https://raw.githubusercontent.com/4driancb/FIT3179/main/FIT3179%20Week%2010%20Homework/FIT3179%20Week%2010%20Homework/OilDatasetwithContinent.csv"},
+    "mark": "rect",
+    "transform": [
+      {
+        "filter": "datum.Year >= 1950"
+      }
+    ],
+    "encoding": {
+      "y": {"field": "Continent", "type": "nominal"},
+      "x": {"field": "Year", "type": "ordinal"},
+      "color": {"title":"Average CO2 Emission(kt)","aggregate": "mean", "field": "Oil", "type": "quantitative"}
+  }
+}

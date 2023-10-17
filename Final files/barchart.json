@@ -1,0 +1,61 @@
+{
+  "config": {"view": {"stroke": null}, "legend": {"disable": true}},
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {"url": "https://raw.githubusercontent.com/4driancb/FIT3179/main/FIT3179%20Week%2010%20Homework/(veryrealCSVFIXED)CO2EmissionFiltered.csv"},
+  "width": 375,
+  "height": 390,
+  "transform": [
+    {
+      "aggregate": [{
+       "op": "mean",
+       "field": "Total",
+       "as": "mean_co2"
+      }],
+      "groupby": ["Country"]
+    }
+  ],
+  "layer": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal",
+          "sort": "-y",
+          "axis": {"labelAngle": 0}
+        },
+        "y": {
+          "title": "Total CO2 Emissions (kt)",
+          "field": "mean_co2",
+          "type": "quantitative"
+        },
+        "color": {"field": "mean_co2", "scale": {"range": ["#90EE90"]}},
+        "tooltip": {"field": "mean_co2", "type": "quantitative", "format":","}
+      }
+    },
+    {
+      "mark": "rule",
+      "encoding": {
+        "y": {
+          "aggregate": "mean",
+          "field": "mean_co2",
+          "type": "quantitative"
+        },
+        "color": {"value": "red"},
+        "size": {"value": 3}
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "bottom",
+        "dx": -2,
+        "dy": -2,
+        "x": "width",
+        "y": 240,
+        "text": "Mean CO2 Emission"
+      }
+    }
+  ]
+}

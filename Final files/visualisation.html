@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>CO2 Emissions Around The Globe</title>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"
+    integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- pure grid group -->
+    <div id="title" class="pure-g" style="background-color: white;">
+      <div class="pure-u-1-1" ;>
+        <div style="text-align: center;">
+          <h1 style="color:black;font-size:90px;">Effect of CO2 Emissions</h1>
+        </div>
+      </div>
+    </div>
+    <hr align="center">
+    <div style="text-align: center;">
+      <a class="pure-button" color="white" href="#CO2-Emissions">CO2 Emissions</a>
+
+
+      <a class="pure-button" href="#Effect-on-temperature">Effect on Global Temperature</a>
+
+
+      <a class="pure-button" href="#Effect-on-Humans">Effect on Humans</a>
+    </div>
+
+    <hr align="center">
+  <!-- end pure grid group -->
+
+  <!-- pure grid group -->
+  <div id="CO2-Emissions" class="pure-g">
+    <div class="pure-u-4-5">
+      <h1 style="color:white">CO2 Emissions</h1>
+    </div>
+  </div>
+
+  <div class="pure-g" style="background-color: white" ;>
+    <div class="pure-u-1-2">
+      <div class="description description-left">
+        <div style="text-align: justify;">
+          <h2>Total CO2 Emissions Around The World</h2>
+          <p>
+            This world map shows how each country's CO2 emission per capita compare to each other using color
+            saturation. There is a large difference in CO2 emissions between developed
+            and developing countries. Developed countries generally have much higher CO2 emissions per capita than
+            developing countries.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="pure-u-1-2">
+      <div class="description description-right">
+        <div style="text-align: justify;">
+          <h2 style="color: white;"> Total CO2 Emissions Around The World</h2>
+          <p>
+            The map shows that global action is needed to reduce CO2 emissions.
+            Countries with high CO2 emissions need to take action in reducing their carbon emissions, and start moving
+            to clean energy.
+            That way, we can make our world healthier, and in turn increase the life span of living creatures.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pure-g" style="background-color: white" ;>
+    <div class="pure-u-1-1">
+      <div style="text-align: center;">
+      <div id="vis1" class="vis-container"></div>
+        </div>
+    </div>
+  </div>
+  <!-- end pure grid group -->
+  <hr>
+  <!-- pure grid group -->
+  <div class="pure-g" style="background-color: white" ;>
+    <div class="pure-u-1-2">
+      <div class="description description-left">
+        <div style="text-align: justify;">
+          <h2>Highest CO2 Emitting Countries</h2>
+          <p>
+            The bar chart shows the average CO2 emissions of some countries. They are sorted in descending order
+            by their average total CO2 emissions from 1940 to 2021. Out of the entire list of countries, the top seven countries
+            with the highest total CO2 emissions are China, Russia, Germany, Japan, Canada, Ukraine, and India.
+            <br>
+            <br>
+            These countries are all major emitters of CO2 due to a variety of factors, including their large
+            populations, industrialised economies, and reliance on fossil fuels.
+            China is the world's largest emitter of CO2, accounting for over 27% of global emissions. This is because they have a
+            large population and rapid economic growth, which has led to a significant increase in energy
+            consumption.
+            Russia ranks second in CO2 emission. Russia's
+            emissions are expected to grow continuously in the coming years as its nuclear power is developing. Both of these countries emit more CO2 than average.
+            </p>
+        </div>
+      </div>
+    </div>
+    <div class="pure-u-1-2">
+      <div id="vis2" class="vis-container" style="margin-left: 75px;"></div>
+    </div>
+
+  </div>
+  <!-- end pure grid group -->
+  <hr>
+  <!-- pure grid group -->
+  <div class="pure-g" style="background-color: white" ;>
+    <div class="pure-u-1-2">
+      <div id="vis3" class="vis-container" style="margin-right: 75px;"></div>
+    </div>
+    <div class="pure-u-1-2">
+      <div class="description description-right">
+        <div style="text-align: justify;">
+          <h2>Emission Trends</h2>
+          <p>
+            The interactive multiple line chart shows the average total CO2 emissions of Canada, China, Germany, India, Japan, Russia, and
+            Ukraine from 1970 to 2020.
+            The line chart shows that the average total CO2 emissions of all countries in the chart have
+            increased over time.
+          <p>
+            The increase in CO2 emissions is mainly because of industrial development where more technologies and machines are created. This means 
+            that high amounts of energy are needed to produce them. Eventhough technological advancement is good for the world, we also
+            need to improve our emission management, and prioritise using renewable energy.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- end pure grid group -->
+
+  <!-- pure grid group -->
+  <div id="Effect-on-temperature" class="pure-g">
+    <div class="pure-u-1-1">
+      <h1 style="color:white">Effect on Global Temperature</h1>
+    </div>
+  </div>
+
+  <div class="pure-g" style="background-color: white" ;>
+    <div class="pure-u-1-2">
+      <div class="description description-left">
+        <div style="text-align: justify;">
+          <h2>Land-Ocean Temperatures</h2>
+          <p>
+            The regression model between year and land-ocean temperature can be used to make 
+            estimates about future land-ocean temperature trends. The overall trend of the graph is a positive linear trend
+            where land-ocean temperatures are expected to continuously rise in the upcoming years. However, it is important to 
+            note that this model is based on data from the past and does not take other factors into consideration. This model is
+            derived mathematically and provides a numerical estimate.
+            </p>
+          <p>
+            Eventhough it is just an estimate, it is still important to realise that our earth is getting overall warmer. This leads to 
+            multiple negative impacts such as rising sea levels, extreme rainfall, hotter days, and many more (NSW gov, 2023). 
+
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="pure-u-1-2">
+      <div id="vis4" class="vis-container" style="margin-left: 75px;"></div>
+    </div>
+  </div>
+  <hr>
+  <div class="pure-g" style="background-color: white";>
+    <div class="pure-u-1-2">
+      <hr color="white">
+      <div id="vis5" class="vis-container"></div>
+    </div>
+    <div class="pure-u-1-2">
+      <div class="description description-right">
+        <div style="text-align: justify;">
+          <p>
+          <h2>Sea Ice</h2>
+          This area chart shows the average sea ice extent in the Artic monthly from 1980 to 2023, divided into four year ranges:
+          1980-1989, 1990-1999, 2000-2009, and 2010-2023. We can see that the more recent years have less ice cap extents, this is
+          a result of increase in global temperature.
+          <p>
+          This decline in sea ice extent is a concern because it has a high contribution to climate change. Sea ice extent is important
+          since it reflects sunlight back into space, which keeps the Earth cool. If there are less sea ice extent, there will be less sunlight
+          reflected and the Earth warms as it is absorbed by the ocean.
+          <p>
+          We can also see that earlier years have good recovery in sea ice extents as it approaches colder seasons. Meanwhile, more recent years
+          have less sea ice extent restorations during winter.
+          
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- pure grid group -->
+  <div id="Effect-on-Humans" class="pure-g">
+    <div class="pure-u-1-1">
+      <h1 style="color:white">Effect on Humans</h1>
+    </div>
+  </div>
+
+  <div class="pure-g" style="background-color: white" ;>
+    <div class="pure-u-1-2">
+      <div class="description description-left">
+        <div style="text-align: justify;">
+          <h2>Death by Risk Factors</h2>
+          <p>
+            This bar chart shows how significant each risk factor is compared to each other in a ranked bar chart format, where the top most bar is the most significant
+            cause of death. In 2019, air pollution is the third leading cause of death globally. The previous years have also shown its significance where it is ranked
+            second and third until 2015.
+          </p>
+          <p>
+            CO2 emissions are a big contributor to air pollution. It is emitted from a variety of sources, including vehicles, power plants, and factories. Furthermore,
+            it reacts with other pollutants that form harmful smog that affects human health adversely.
+          </p>
+          <p>
+            There are a lot of things we can do to reduce CO2 emissions and improve our health. These include switching to renewable energy soruces, using public transport
+            instead of personal vehicles, and recycling. 
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="pure-u-1-2">
+      <div id="vis6" class="vis-container"></div>
+    </div>
+  </div>
+
+  <div style="text-align: center;">
+    <a class="pure-button" href="#title">Back to top</a>
+  </div>
+
+  <hr color="white">
+
+  <div class="pure-g" style="background-color: #ebeaea" ;>
+    <div class="pure-u-1-1">
+      <div style="text-align: center;">
+      <p>This visualisation is created by <b>Adrian Budiyuwono</b>. All datasets used can be seen through this <a
+          href="https://docs.google.com/document/d/1ALsPO668uPf2DCrDyTtkm4TFlHL_x9aGsU2KXcAID3k/edit?usp=sharing">dataset
+          list</href>.</a></p>
+      <hr color="#ebeaea">
+      <hr color="#ebeaea">
+    </div>
+  </div>
+  </div>
+
+
+
+  </div> <!-- end page -->
+
+  <script type="text/javascript">
+    var specVis1 = "./mapviz.json";
+    var specVis2 = "./barchart.json";
+    var specVis3 = "./multiplelinechart.json";
+    var specVis4 = "./globaltempregression.json";
+    var specVis5 = "./seaiceextent.json";
+    var specVis6 = "./causeofdeath.json";
+
+    vegaEmbed('#vis1', specVis1, { "actions": false });
+
+    vegaEmbed('#vis2', specVis2, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis3', specVis3, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis4', specVis4, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis5', specVis5, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis6', specVis6, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  </script>
+</body>
+
+</html>

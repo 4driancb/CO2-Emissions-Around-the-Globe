@@ -1,0 +1,25 @@
+{   
+  "config": {"view": {"stroke":null}},
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 415, "height": 325,
+    "data": {"url": "https://raw.githubusercontent.com/4driancb/FIT3179/main/Clean_datasets/seaicewithrange(real).csv"},
+    "mark": "area",
+    "encoding": {
+      "x": {
+        "title":"Month","timeUnit": "month", "field": "Month",
+        "axis": {"grid": false}
+      },
+      "y": {
+        "title": "Mean of Ice Extent",
+        "aggregate": "mean", "field": "Extent",
+        "axis": {"grid": false}
+      },
+      "color": {
+        "title": "Year Range",
+        "field": "Range",
+        "scale": {"scheme": "greenblue"},
+        "legend":  {"orient": "left", "offset":-120}
+      },
+      "tooltip": [{"field": "Range", "title": "Year range"}]
+    }
+  }

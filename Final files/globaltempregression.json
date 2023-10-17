@@ -1,0 +1,70 @@
+{
+  "data": {
+    "url": "https://raw.githubusercontent.com/4driancb/FIT3179/main/Clean_datasets/landoceantemp.csv"
+  },
+  "width": 410,
+  "height": 275,
+  "layer": [
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "color": "green"
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "title": "Land-Ocean Temperature (°C)",
+          "field": "No_Smoothing",
+          "type": "quantitative"
+        },
+        "tooltip": [{"title":"Temperature (°C)","field": "No_Smoothing", "type": "quantitative"}]
+      }
+    },
+    {
+      "mark": {
+        "type": "line",
+        "color": "firebrick"
+      },
+      "transform": [
+        {
+          "regression": "No_Smoothing",
+          "on": "Year"
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "No_Smoothing",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "regression": "No_Smoothing",
+          "on": "Year",
+          "params": true
+        },
+        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+      ],
+      "mark": {
+        "type": "text",
+        "color": "firebrick",
+        "x": "width",
+        "align": "right",
+        "y": -5
+      },
+      "encoding": {
+        "text": {"type": "nominal", "field": "R2"}
+      }
+    }
+  ]
+}

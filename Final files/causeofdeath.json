@@ -1,0 +1,46 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bar chart that sorts the y-values by the x-values.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/4driancb/FIT3179/main/Clean_datasets/number-of-deaths-by-risk-factor-columnfixed.csv"
+    },
+    "width": 335,
+    "height": {
+        "step": 17
+    },
+    "transform": [{"filter": "datum['Year']==CurrentYear"}],
+    "mark": "bar",
+    "params": [
+        {
+            "name": "CurrentYear",
+            "value": "2019",
+            "bind": {
+                "input": "select",
+                "options": ["1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019"]
+                ,"labels": ["1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019"]
+            ,"name": "Year: "}
+        }
+    ],
+    "encoding": {
+        "y": {
+            "field": "Risk factor",
+            "type": "ordinal",
+            "sort": "-x"
+        },
+        "x": {
+            "aggregate": "sum",
+            "field": "Number of Deaths",
+            "title": "Number of Deaths"
+        },
+        "color": {
+            "condition": [
+              {
+                "value": "green",
+                "test": {"field": "Risk factor", "oneOf": ["Air pollution"]}
+              }
+            ],
+            "value": "#ddd"
+          },
+        "tooltip": {"title": "Deaths","field":"Number of Deaths", "type": "quantitative", "format":","}
+    }
+}
